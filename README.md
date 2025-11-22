@@ -1,16 +1,13 @@
-# 🔄 Analisis Kalimat
+# 🔄 Analisis Text
 
 <div align="center">
 
 ![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Status](https://img.shields.io/badge/status-active-success)
 ![GUI](https://img.shields.io/badge/GUI-Tkinter-orange)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20Mac-lightgrey)
 
-**Program analisis kalimat dengan GUI modern untuk membalik kalimat dan menganalisis teks secara lengkap**
-
-[Fitur](#-fitur) • [Instalasi](#-instalasi) • [Penggunaan](#-penggunaan) • [Dokumentasi](#-dokumentasi)
+**Program analisis text untuk membalik kalimat dan menganalisis teks secara lengkap**
 
 </div>
 
@@ -26,7 +23,7 @@
 
 ## 🚀 Gambaran Umum
 
-**Program Analisis Kalimat Super** adalah aplikasi GUI modern yang dikembangkan untuk menganalisis teks secara komprehensif. Aplikasi ini tidak hanya mampu membalik kalimat seperti versi konsol sebelumnya, tetapi juga dilengkapi dengan berbagai fitur analisis teks lengkap, sistem penyimpanan riwayat otomatis, dan antarmuka pengguna yang intuitif.
+**Program Analisis Text** adalah aplikasi GUI modern yang dikembangkan untuk menganalisis teks secara komprehensif. Aplikasi ini tidak hanya mampu membalik kalimat seperti versi konsol sebelumnya, tetapi juga dilengkapi dengan berbagai fitur analisis teks lengkap, sistem penyimpanan riwayat otomatis, dan antarmuka pengguna yang intuitif.
 
 ### ✨ Highlights
 
@@ -170,13 +167,6 @@ graph TD
     H --> I[History Management]
 ```
 
-### Data Flow
-
-1. **Input** → User memasukkan kalimat
-2. **Processing** → Sistem menganalisis berbagai aspek
-3. **Storage** → Hasil disimpan ke JSON
-4. **Display** → Hasil ditampilkan di GUI
-5. **History** → User dapat mengakses riwayat
 ---
 
 ### File Descriptions

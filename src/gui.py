@@ -7,7 +7,7 @@ from history_manager import HistoryManager
 class KalimatApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Analisis Kalimat")
+        self.root.title("Analisis Text")
         self.root.geometry("800x700")
         self.root.configure(bg="#f0f0f0")
         
@@ -26,7 +26,7 @@ class KalimatApp:
         main_frame.pack(fill=tk.BOTH, expand=True)
         
         # Judul
-        title_label = ttk.Label(main_frame, text="Analisis Teks", 
+        title_label = ttk.Label(main_frame, text="Analisis Text", 
                                font=self.title_font, foreground="#2c3e50")
         title_label.pack(pady=(0, 20))
         
@@ -117,8 +117,8 @@ class KalimatApp:
         # Tampilkan riwayat saat pertama kali dibuka
         self.tampilkan_riwayat()
     
+    # Memperbarui preview kalimat saat pengguna mengetik
     def update_preview(self, event=None):
-        """Memperbarui preview kalimat saat pengguna mengetik"""
         kalimat = self.kalimat_entry.get("1.0", tk.END).strip()
         
         if kalimat:
@@ -128,15 +128,15 @@ class KalimatApp:
             self.preview_label.config(text="")
             self.process_button.config(state=tk.DISABLED)
     
+    # Menghapus input dan hasil
     def hapus_input(self):
-        """Menghapus input dan hasil"""
         self.kalimat_entry.delete("1.0", tk.END)
         self.preview_label.config(text="")
         self.clear_results()
         self.process_button.config(state=tk.DISABLED)
     
+    # Mengosongkan semua label hasil
     def clear_results(self):
-        """Mengosongkan semua label hasil"""
         self.kalimat_asli_label.config(text="")
         self.kalimat_dibalik_label.config(text="")
         self.jumlah_vokal_label.config(text="")
@@ -144,8 +144,8 @@ class KalimatApp:
         self.jumlah_kata_label.config(text="")
         self.total_karakter_label.config(text="")
     
+    # Memproses kalimat dan menampilkan hasil
     def proses_kalimat(self):
-        """Memproses kalimat dan menampilkan hasil"""
         kalimat = self.kalimat_entry.get("1.0", tk.END).strip()
         
         if not kalimat:
@@ -179,8 +179,8 @@ class KalimatApp:
         # Tampilkan pesan sukses
         messagebox.showinfo("Berhasil", "Kalimat berhasil diproses!")
     
+    # Menampilkan riwayat analisis
     def tampilkan_riwayat(self):
-        """Menampilkan riwayat analisis"""
         riwayat = self.history_manager.get_history()
         
         self.history_text.delete("1.0", tk.END)
@@ -200,9 +200,9 @@ class KalimatApp:
             self.history_text.insert(tk.END, f"Total Karakter: {entry['total_karakter']}\n")
             self.history_text.insert(tk.END, "-" * 50 + "\n\n")
     
+    # Menghapus semua riwayat
     def hapus_riwayat(self):
-        """Menghapus semua riwayat"""
-        if messagebox.askyesno("Konfirmasi", "Apakah Anda yakin ingin menghapus semua riwayat?"):
+         if messagebox.askyesno("Konfirmasi", "Apakah Anda yakin ingin menghapus semua riwayat?"):
             self.history_manager.clear_history()
             self.tampilkan_riwayat()
             messagebox.showinfo("Berhasil", "Riwayat berhasil dihapus!")
